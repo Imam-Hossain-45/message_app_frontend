@@ -8,7 +8,7 @@ function Conversations({ user }) {
   useEffect(() => {
     const fetchConversations = async () => {
       try {
-        axios.defaults.headers.common['Authorization'] = `Bearer ${user.token}`;
+        axios.defaults.headers.common['Authorization'] = `Bearer ${user.access}`;
         const response = await axios.get('/chat/users/');
         setConversations(response.data);
       } catch (error) {

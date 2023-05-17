@@ -14,7 +14,7 @@ const Chat = ({ user }) => {
 
   const initializeWebSocket = async () => {
     try {
-      axios.defaults.headers.common['Authorization'] = `Bearer ${user.token}`;
+      axios.defaults.headers.common['Authorization'] = `Bearer ${user.access}`;
       const response = await axios.post('/chat/window/', { user: conversationId });
       console.log(response.data);
       setReceivedMessages(response.data.messages);
